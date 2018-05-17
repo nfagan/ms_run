@@ -1,4 +1,4 @@
-function t = make_mda_file( pl2_file, channels, out_file )
+function make_mda_file( pl2_file, channels, out_file )
 
 import shared_utils.assertions.*;
 
@@ -11,7 +11,6 @@ for i = 1:numel(channels)
   
   if ( i == 1 )
     mat = zeros( numel(channels), numel(ad.Values), 'single' );
-    t = (0:numel(ad.Values)-1) * (1/ad.ADFreq);
   end
   
   mat(i, :) = single( ad.Values );
